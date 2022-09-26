@@ -1,0 +1,13 @@
+{
+  "name": "@lasted/shared",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "buildOptions": {
+    "name": "@lasted/shared",
+    "formats": [
+      "cjs",
+      "esm-bundler"
+    ]
+  }
+}
