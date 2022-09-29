@@ -5,11 +5,9 @@
 </template>
 
 <script lang="ts">
-import { Options } from 'vue-class-component'
+import { Options,Vue } from 'vue-class-component'
 import { MyJsonConverter } from '@lasted/shared'
 import BasePageDTO from '../beans/BasePageDTO'
-import { Vue } from 'vue-property-decorator'
-
 @Options({
   name: 'Index'
 })
