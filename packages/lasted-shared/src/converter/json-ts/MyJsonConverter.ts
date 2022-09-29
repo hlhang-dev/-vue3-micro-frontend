@@ -1,6 +1,7 @@
 import { JsonConvert, ValueCheckingMode } from 'json2typescript'
+import { PropertyMatchingRule } from 'json2typescript/src/json2typescript/json-convert-enums'
 
-export class MyJsonConverter {
+export default class MyJsonConverter{
 
   private static _instance: MyJsonConverter
 
@@ -9,7 +10,6 @@ export class MyJsonConverter {
   public static getInstance() {
     if (!MyJsonConverter._instance) {
       MyJsonConverter._instance = new MyJsonConverter()
-
       this.jsonConvert = new JsonConvert()
       this.jsonConvert.ignorePrimitiveChecks = false
       this.jsonConvert.valueCheckingMode = ValueCheckingMode.DISALLOW_NULL
@@ -18,15 +18,28 @@ export class MyJsonConverter {
   }
 
   public deserializeObject<T>(jsonObject: any, classReference: {
-    new(): T;
+    new(): T
   }): T {
-    let result = MyJsonConverter.jsonConvert.deserializeObject(jsonObject, classReference)
+    let result: T
+    try {
+      result = MyJsonConverter.jsonConvert.deserializeObject(jsonObject, classReference)
+    } catch (error) {
+      console.log('MyJsonConverter deserializeObject error', error)
+      result = new classReference()
+    }
     return result
   }
 
-  deserializeArray<T>(jsonArray: any[], classReference: {
+  public deserializeArray<T>(jsonArray: any[], classReference: {
     new(): T;
   }): T[] {
-    return MyJsonConverter.jsonConvert.deserializeArray(jsonArray, classReference)
+    let result: T[]
+    try {
+      result = MyJsonConverter.jsonConvert.deserializeArray(jsonArray, classReference)
+    } catch (error) {
+      console.log('MyJsonConverter deserializeArray error', error)
+      result = []
+    }
+    return result
   }
 }
