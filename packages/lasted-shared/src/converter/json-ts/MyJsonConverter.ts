@@ -1,7 +1,6 @@
 import { JsonConvert, ValueCheckingMode } from 'json2typescript'
-import { PropertyMatchingRule } from 'json2typescript/src/json2typescript/json-convert-enums'
 
-export default class MyJsonConverter{
+export class MyJsonConverter{
 
   private static _instance: MyJsonConverter
 
