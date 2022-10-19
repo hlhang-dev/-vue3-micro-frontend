@@ -1,6 +1,7 @@
 <template>
   <view class="content">
-    {{ basePageDTO?.page }}
+    {{ value }}
+    {{ basePageDTO.page }}
   </view>
 </template>
 

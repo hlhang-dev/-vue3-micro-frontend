@@ -1,0 +1,24 @@
+{
+  "name": "@lasted/uni-shared",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "devDependencies": {
+    "@dcloudio/types": "^3.0.14",
+    "@dcloudio/uni-automator": "3.0.0-alpha-3060420220922001",
+    "@dcloudio/uni-cli-shared": "3.0.0-alpha-3060420220922001",
+    "@dcloudio/uni-stacktracey": "3.0.0-alpha-3060420220922001",
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-3060420220922001",
+    "vite": "^2.9.14"
+  },
+  "buildOptions": {
+    "name": "@lasted/uni-shared",
+    "formats": [
+      "cjs",
+      "esm-bundler"
+    ]
+  },
+  "dependencies": {
+    "@lasted/shared": "workspace:^1.0.0"
+  }
+}
