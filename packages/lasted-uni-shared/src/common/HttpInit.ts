@@ -1,4 +1,4 @@
-import HttpDefinition from '../beans/common/HttpDefinition'
+import IHttpDefinition from '../definition/IHttpDefinition'
 import HttpService from './HttpService'
 
 export default class HttpInit {
@@ -12,7 +12,7 @@ export default class HttpInit {
     return this._instance
   }
 
-  init(httpDefinition: HttpDefinition) {
+  init(httpDefinition: IHttpDefinition) {
       HttpService.init(httpDefinition)
   }
 }

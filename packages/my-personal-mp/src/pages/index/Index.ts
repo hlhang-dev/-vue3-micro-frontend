@@ -11,6 +11,5 @@ export default class Index extends Vue {
 
   created() {
     this.basePageDTO = MyJsonConverter.getInstance().deserializeObject({ page: 1 }, BasePageDTO)
-    console.log(this.basePageDTO)
   }
 }

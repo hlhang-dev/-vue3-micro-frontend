@@ -6,7 +6,7 @@ import LoginManagement from '../management/LoginManagement'
 import UniAppManagement from '../management/UniAppManagement'
 import PageManagement from '../management/PageManagement'
 import MyResponseCodeEnum from '../definition/http/MyResponseCodeEnum'
-import HttpDefinition from '../beans/common/HttpDefinition'
+import IHttpDefinition from '../definition/IHttpDefinition'
 
 export default class HttpService {
   // 请求超时时间，单位：ms
@@ -18,7 +18,7 @@ export default class HttpService {
 
   private static IS_SHOW_LOADING = false
 
-  public static init(httpDefinition: HttpDefinition) {
+  public static init(httpDefinition: IHttpDefinition) {
     this.SERVER_API_TIMEOUT = httpDefinition.timeout
     this.LOGIN_PAGE = httpDefinition.pageUrl.LOGIN_PAGE
     if (!!httpDefinition.isShowLoading) {

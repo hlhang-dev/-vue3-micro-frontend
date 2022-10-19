@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
+import { onLaunch, onShow, onHide } from '@dcloudio/uni-app'
+import HttpInit from '@lasted/uni-shared/src/common/HttpInit'
+import HttpDefinition from './pages/bens/common/HttpDefinition'
+
 onLaunch(() => {
-  console.log("App Launch");
-});
+  HttpInit.getInstance().init(new HttpDefinition())
+})
 onShow(() => {
-  console.log("App Show");
-});
+})
 onHide(() => {
-  console.log("App Hide");
-});
+})
 </script>
 <style></style>
