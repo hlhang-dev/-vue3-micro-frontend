@@ -1,7 +1,9 @@
-import ParentLoginManagement from '../definition/ILoginManagement'
+import TokenConstant from '../definition/token/TokenConstant'
+import UniErrorMsgEnum from '../definition/UniErrorMsgEnum'
 
+export class LoginManagement{
+  private static _instance: LoginManagement
 
-class LoginManagement extends ParentLoginManagement{
 
   public static getInstance() {
     if (!this._instance) {
@@ -9,6 +11,44 @@ class LoginManagement extends ParentLoginManagement{
     }
     return this._instance
   }
-}
 
-export default LoginManagement
+
+
+  isAccountLogin() {
+    return !!uni.getStorageSync(TokenConstant.ACCOUNT_AUTH_TOKEN_LABEL)
+  }
+
+  isAccountLoginBeOverdue(code: number) {
+    return this.isAccountLogin() && code === 401
+  }
+
+  getWxCode(): Promise<string> {
+    return new Promise<string>((resolve, reject) => {
+      uni.login({
+        success: res => {
+          if (res.errMsg === UniErrorMsgEnum.LOGIN_OK) {
+            resolve(res.code)
+          } else {
+            reject(res.errMsg)
+          }
+        },
+        fail: res => reject(res.errMsg)
+      })
+    })
+  }
+
+  checkWxLoginSession(): Promise<boolean> {
+    return new Promise<boolean>((resolve) => {
+      uni.checkSession({
+        success: res => {
+          if (res.errMsg === UniErrorMsgEnum.CHECK_SESSION_OK) {
+            resolve(true)
+          } else {
+            resolve(false)
+          }
+        },
+        fail: () => resolve(false)
+      })
+    })
+  }
+}

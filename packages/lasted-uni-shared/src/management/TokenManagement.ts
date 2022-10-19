@@ -1,6 +1,6 @@
 import TokenConstant from '../definition/token/TokenConstant'
 
-export default class TokenManagement {
+export class TokenManagement {
 
   static _instance: TokenManagement
 

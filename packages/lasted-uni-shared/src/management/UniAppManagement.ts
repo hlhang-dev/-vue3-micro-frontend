@@ -1,11 +1,11 @@
-import LoadingManagement from './LoadingManagement'
+import { LoadingManagement } from './LoadingManagement'
 import MyResponseCodeEnum from '../definition/http/MyResponseCodeEnum'
 import { MyJsonConverter, Utils } from '@lasted/shared'
 import ApiUnifiedVO from '../beans/http/vo/ApiUnifiedVO'
 import UniUtils from '../common/UniUtils'
 import ShowModelCodeEnum from '../definition/http/ShowModelCodeEnum'
 
-class UniAppManagement {
+export class UniAppManagement {
   public static wxRequest<T>(url: string, method: string, data: object, timeout: number, callback: (requestCode: MyResponseCodeEnum, result?: ApiUnifiedVO) => void, headers: object = {}, showLoading: boolean = true) {
     if (showLoading) {
       LoadingManagement.getInstance().show()
@@ -53,5 +53,3 @@ class UniAppManagement {
     )
   }
 }
-
-export default UniAppManagement

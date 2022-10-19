@@ -1,4 +1,7 @@
-import IHttpDefinition from './definition/IHttpDefinition'
-import IPageUrl from './definition/IPageUrl'
+export { IPageUrl } from './definition/IPageUrl'
 
-export { IHttpDefinition, IPageUrl }
+export { TokenManagement } from './management/TokenManagement'
+
+export { IHttpDefinition } from './definition/IHttpDefinition'
+export { HttpService } from './common/HttpService'
+export { HttpInit } from './common/HttpInit'

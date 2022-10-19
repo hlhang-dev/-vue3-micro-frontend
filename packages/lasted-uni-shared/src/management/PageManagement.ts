@@ -1,6 +1,6 @@
 import { Utils } from '@lasted/shared'
 
-class PageManagement {
+export class PageManagement {
   public static redirectPage<T>(page: string, params?: object) {
     uni.redirectTo({
       url: page + Utils.objToUrlParam(params, true)
@@ -43,4 +43,3 @@ class PageManagement {
 
 }
 
-export default PageManagement

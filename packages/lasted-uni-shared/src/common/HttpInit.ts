@@ -1,7 +1,7 @@
-import IHttpDefinition from '../definition/IHttpDefinition'
-import HttpService from './HttpService'
+import {HttpService } from './HttpService'
+import { IHttpDefinition } from '../definition/IHttpDefinition'
 
-export default class HttpInit {
+export class HttpInit {
 
   protected static _instance: HttpInit
 

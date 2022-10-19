@@ -1,4 +1,4 @@
-import TokenManagement from '../management/TokenManagement'
+import { TokenManagement } from '../management/TokenManagement'
 import TokenConstant from '../definition/token/TokenConstant'
 
 class UniUtils {

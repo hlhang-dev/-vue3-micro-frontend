@@ -1,6 +1,6 @@
 import NoticeDurationEnum from '../definition/NoticeDurationEnum'
 
-class ShowNoticeManagement {
+export class ShowNoticeManagement {
   public static showNormalNotice(title: string = '', duration = NoticeDurationEnum.NORMAL) {
     uni.showToast({
       icon: 'none',
@@ -17,5 +17,3 @@ class ShowNoticeManagement {
     })
   }
 }
-
-export default ShowNoticeManagement

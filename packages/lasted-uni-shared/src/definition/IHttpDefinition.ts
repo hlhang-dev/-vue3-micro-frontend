@@ -1,6 +1,6 @@
-import IPageUrl from './IPageUrl'
+import { IPageUrl } from './IPageUrl'
 
-export default interface IHttpDefinition {
+export interface IHttpDefinition {
   timeout: number
   pageUrl: IPageUrl
   isShowLoading?: boolean

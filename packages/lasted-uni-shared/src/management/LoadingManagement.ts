@@ -1,4 +1,4 @@
-export default class LoadingManagement {
+export class LoadingManagement {
   private static _instance: LoadingManagement
 
   private static loadingCounter: number = 0

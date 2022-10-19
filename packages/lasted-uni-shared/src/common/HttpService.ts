@@ -1,15 +1,14 @@
 import ApiUnifiedVO from '../beans/http/vo/ApiUnifiedVO'
 import HttpStatusCode from '../definition/http/HttpStatusEnum'
 import Lang from '../definition/Lang'
-import ShowNoticeManagement from '../management/ShowNoticeManagement'
-import LoginManagement from '../management/LoginManagement'
-import UniAppManagement from '../management/UniAppManagement'
-import PageManagement from '../management/PageManagement'
+import { ShowNoticeManagement } from '../management/ShowNoticeManagement'
+import { LoginManagement } from '../management/LoginManagement'
+import { UniAppManagement } from '../management/UniAppManagement'
+import { PageManagement } from '../management/PageManagement'
 import MyResponseCodeEnum from '../definition/http/MyResponseCodeEnum'
-import IHttpDefinition from '../definition/IHttpDefinition'
+import { IHttpDefinition } from '../definition/IHttpDefinition'
 
-export default class HttpService {
-  // 请求超时时间，单位：ms
+export class HttpService {
   private static SERVER_API_TIMEOUT: number = 0
 
   private static ANTI_SHAKE_COUNTER = 0
