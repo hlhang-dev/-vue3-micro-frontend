@@ -6,12 +6,25 @@ import LoginManagement from '../management/LoginManagement'
 import UniAppManagement from '../management/UniAppManagement'
 import PageManagement from '../management/PageManagement'
 import MyResponseCodeEnum from '../definition/http/MyResponseCodeEnum'
+import HttpDefinition from '../beans/common/HttpDefinition'
 
 export default class HttpService {
   // 请求超时时间，单位：ms
-  private static SERVER_API_TIMEOUT: number = 3000
+  private static SERVER_API_TIMEOUT: number = 0
 
   private static ANTI_SHAKE_COUNTER = 0
+
+  private static LOGIN_PAGE = ''
+
+  private static IS_SHOW_LOADING = false
+
+  public static init(httpDefinition: HttpDefinition) {
+    this.SERVER_API_TIMEOUT = httpDefinition.timeout
+    this.LOGIN_PAGE = httpDefinition.pageUrl.LOGIN_PAGE
+    if (!!httpDefinition.isShowLoading) {
+      this.IS_SHOW_LOADING = httpDefinition.isShowLoading
+    }
+  }
 
   public static doRequest(
       url: string,
@@ -21,7 +34,7 @@ export default class HttpService {
       showLoading = true
   ): Promise<ApiUnifiedVO> {
     return new Promise<ApiUnifiedVO>((resolve, reject) => {
-      UniAppManagement.wxRequest(url,method,data,HttpService.SERVER_API_TIMEOUT,(responseCodeEnum: MyResponseCodeEnum,result?: ApiUnifiedVO) => {
+      UniAppManagement.wxRequest(url, method, data, HttpService.SERVER_API_TIMEOUT, (responseCodeEnum: MyResponseCodeEnum, result?: ApiUnifiedVO) => {
         switch (responseCodeEnum) {
           case MyResponseCodeEnum.SUCCESS:
             if (result) {
@@ -34,7 +47,7 @@ export default class HttpService {
             reject()
             break
         }
-      },headers,showLoading)
+      }, headers, this.IS_SHOW_LOADING ? showLoading : false)
     })
   }
 
@@ -51,7 +64,7 @@ export default class HttpService {
     }
   }
 
-  private static onNoPermission () {
+  private static onNoPermission() {
     HttpService.ANTI_SHAKE_COUNTER += 1
     if (HttpService.isCanShowExpiredLoginModel()) {
       const title: string = LoginManagement.getInstance().isAccountLogin() ? Lang.LOGIN_BE_OVERDUE_NOTICE: Lang.LOGIN_NOTICE
@@ -65,7 +78,7 @@ export default class HttpService {
   }
 
   private static onLoginBeOverdueCallback() {
-    PageManagement.navigateToPage('', undefined, HttpService.onMoveToLoginPageSuccess)
+    PageManagement.navigateToPage(this.LOGIN_PAGE, undefined, HttpService.onMoveToLoginPageSuccess)
   }
 
   private static onMoveToLoginPageSuccess() {
