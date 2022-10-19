@@ -3,6 +3,7 @@ import MyResponseCodeEnum from '../definition/http/MyResponseCodeEnum'
 import { MyJsonConverter, Utils } from '@lasted/shared'
 import ApiUnifiedVO from '../beans/http/vo/ApiUnifiedVO'
 import UniUtils from '../common/UniUtils'
+import ShowModelCodeEnum from '../definition/http/ShowModelCodeEnum'
 
 class UniAppManagement {
   public static wxRequest<T>(url: string, method: string, data: object, timeout: number, callback: (requestCode: MyResponseCodeEnum, result?: ApiUnifiedVO) => void, headers: object = {}, showLoading: boolean = true) {
@@ -29,6 +30,27 @@ class UniAppManagement {
         callback(MyResponseCodeEnum.COMPLETE)
       }
     })
+  }
+
+  public static doShowModal(title: string, content: string, showCancel: boolean, callback: (code: ShowModelCodeEnum) => void) {
+    uni.showModal({
+          title: title,
+          content: content,
+          showCancel: showCancel,
+          success: (result) => {
+            if (result.confirm) {
+              callback(ShowModelCodeEnum.SUCCESS)
+            } else if (result.cancel) {
+              callback(ShowModelCodeEnum.CANCEL)
+            } else {
+              callback(ShowModelCodeEnum.FAILED)
+            }
+          },
+          fail: () => {
+            callback(ShowModelCodeEnum.FAILED)
+          }
+        }
+    )
   }
 }
 

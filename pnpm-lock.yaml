@@ -42,8 +42,11 @@ importers:
 
   packages/my-personal-mp:
     specifiers:
+      '@dcloudio/types': ^3.0.14
       '@dcloudio/uni-app': 3.0.0-alpha-3060420220922001
       '@dcloudio/uni-app-plus': 3.0.0-alpha-3060420220922001
+      '@dcloudio/uni-automator': 3.0.0-alpha-3060420220922001
+      '@dcloudio/uni-cli-shared': 3.0.0-alpha-3060420220922001
       '@dcloudio/uni-components': 3.0.0-alpha-3060420220922001
       '@dcloudio/uni-h5': 3.0.0-alpha-3060420220922001
       '@dcloudio/uni-mp-alipay': 3.0.0-alpha-3060420220922001
@@ -54,14 +57,17 @@ importers:
       '@dcloudio/uni-mp-toutiao': 3.0.0-alpha-3060420220922001
       '@dcloudio/uni-mp-weixin': 3.0.0-alpha-3060420220922001
       '@dcloudio/uni-quickapp-webview': 3.0.0-alpha-3060420220922001
+      '@dcloudio/uni-stacktracey': 3.0.0-alpha-3060420220922001
+      '@dcloudio/vite-plugin-uni': 3.0.0-alpha-3060420220922001
       '@lasted/shared': workspace:^1.0.0
       '@lasted/uni-shared': workspace:^1.0.0
+      vite: ^2.9.14
       vue: ^3.2.39
       vue-i18n: ^9.1.9
       vuex: ^4.0.2
     dependencies:
       '@dcloudio/uni-app': registry.npmmirror.com/@dcloudio/uni-app/3.0.0-alpha-3060420220922001_vue@3.2.39
-      '@dcloudio/uni-app-plus': registry.npmmirror.com/@dcloudio/uni-app-plus/3.0.0-alpha-3060420220922001_vue@3.2.39
+      '@dcloudio/uni-app-plus': registry.npmmirror.com/@dcloudio/uni-app-plus/3.0.0-alpha-3060420220922001_vite@2.9.15+vue@3.2.39
       '@dcloudio/uni-components': registry.npmmirror.com/@dcloudio/uni-components/3.0.0-alpha-3060420220922001
       '@dcloudio/uni-h5': registry.npmmirror.com/@dcloudio/uni-h5/3.0.0-alpha-3060420220922001_vue@3.2.39
       '@dcloudio/uni-mp-alipay': registry.npmmirror.com/@dcloudio/uni-mp-alipay/3.0.0-alpha-3060420220922001_vue@3.2.39
@@ -77,6 +83,13 @@ importers:
       vue: registry.npmmirror.com/vue/3.2.39
       vue-i18n: registry.npmmirror.com/vue-i18n/9.2.2_vue@3.2.39
       vuex: registry.npmmirror.com/vuex/4.0.2_vue@3.2.39
+    devDependencies:
+      '@dcloudio/types': registry.npmmirror.com/@dcloudio/types/3.0.15
+      '@dcloudio/uni-automator': registry.npmmirror.com/@dcloudio/uni-automator/3.0.0-alpha-3060420220922001_vue@3.2.39
+      '@dcloudio/uni-cli-shared': registry.npmmirror.com/@dcloudio/uni-cli-shared/3.0.0-alpha-3060420220922001_vue@3.2.39
+      '@dcloudio/uni-stacktracey': registry.npmmirror.com/@dcloudio/uni-stacktracey/3.0.0-alpha-3060420220922001
+      '@dcloudio/vite-plugin-uni': registry.npmmirror.com/@dcloudio/vite-plugin-uni/3.0.0-alpha-3060420220922001_vite@2.9.15+vue@3.2.39
+      vite: registry.npmmirror.com/vite/2.9.15
 
 packages:
 
@@ -442,13 +455,13 @@ packages:
     version: 3.0.15
     dev: true
 
-  registry.npmmirror.com/@dcloudio/uni-app-plus/3.0.0-alpha-3060420220922001_vue@3.2.39:
+  registry.npmmirror.com/@dcloudio/uni-app-plus/3.0.0-alpha-3060420220922001_vite@2.9.15+vue@3.2.39:
     resolution: {integrity: sha512-lf+d6zIxonRL8MjQcbWnJS6sGjN0RHJIDiq5wuMThJgMBk1Nni0p+721dZBnmY0Nf06OOMMQFNeJ3zavm4PLiQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@dcloudio/uni-app-plus/-/uni-app-plus-3.0.0-alpha-3060420220922001.tgz}
     id: registry.npmmirror.com/@dcloudio/uni-app-plus/3.0.0-alpha-3060420220922001
     name: '@dcloudio/uni-app-plus'
     version: 3.0.0-alpha-3060420220922001
     dependencies:
-      '@dcloudio/uni-app-vite': registry.npmmirror.com/@dcloudio/uni-app-vite/3.0.0-alpha-3060420220922001_vue@3.2.39
+      '@dcloudio/uni-app-vite': registry.npmmirror.com/@dcloudio/uni-app-vite/3.0.0-alpha-3060420220922001_vite@2.9.15+vue@3.2.39
       '@dcloudio/uni-app-vue': registry.npmmirror.com/@dcloudio/uni-app-vue/3.0.0-alpha-3060420220922001
       '@dcloudio/uni-uts-vite': registry.npmmirror.com/@dcloudio/uni-uts-vite/3.0.0-alpha-3060420220922001_vue@3.2.39
     transitivePeerDependencies:
@@ -459,7 +472,7 @@ packages:
       - vue
     dev: false
 
-  registry.npmmirror.com/@dcloudio/uni-app-vite/3.0.0-alpha-3060420220922001_vue@3.2.39:
+  registry.npmmirror.com/@dcloudio/uni-app-vite/3.0.0-alpha-3060420220922001_vite@2.9.15+vue@3.2.39:
     resolution: {integrity: sha512-WTicanZrfTlD6wwpvtxuVH9vUOB8U+Vn6itw56CvllEjnb/S1Ox6cDl1v+nd32RlUoH7UNfg0NAFquUdafgYbQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@dcloudio/uni-app-vite/-/uni-app-vite-3.0.0-alpha-3060420220922001.tgz}
     id: registry.npmmirror.com/@dcloudio/uni-app-vite/3.0.0-alpha-3060420220922001
     name: '@dcloudio/uni-app-vite'
@@ -471,7 +484,7 @@ packages:
       '@dcloudio/uni-shared': registry.npmmirror.com/@dcloudio/uni-shared/3.0.0-alpha-3060420220922001
       '@dcloudio/uts': registry.npmmirror.com/@dcloudio/uts/3.0.0-alpha-3060420220922001
       '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/4.2.1
-      '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/2.3.4_vue@3.2.39
+      '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/2.3.4_vite@2.9.15+vue@3.2.39
       '@vue/compiler-dom': registry.npmmirror.com/@vue/compiler-dom/3.2.39
       '@vue/compiler-sfc': registry.npmmirror.com/@vue/compiler-sfc/3.2.39
       debug: registry.npmmirror.com/debug/4.3.4
@@ -518,6 +531,32 @@ packages:
     version: 3.0.0-alpha-3060420220922001
     dependencies:
       '@dcloudio/uni-cli-shared': registry.npmmirror.com/@dcloudio/uni-cli-shared/3.0.0-alpha-3060420220922001
+      address: registry.npmmirror.com/address/1.2.1
+      cross-env: registry.npmmirror.com/cross-env/7.0.3
+      debug: registry.npmmirror.com/debug/4.3.4
+      default-gateway: registry.npmmirror.com/default-gateway/6.0.3
+      fs-extra: registry.npmmirror.com/fs-extra/10.1.0
+      licia: registry.npmmirror.com/licia/1.37.0
+      postcss-selector-parser: registry.npmmirror.com/postcss-selector-parser/6.0.10
+      qrcode-reader: registry.npmmirror.com/qrcode-reader/1.0.4
+      qrcode-terminal: registry.npmmirror.com/qrcode-terminal/0.12.0
+      ws: registry.npmmirror.com/ws/8.9.0
+    transitivePeerDependencies:
+      - bufferutil
+      - postcss
+      - supports-color
+      - ts-node
+      - utf-8-validate
+      - vue
+    dev: true
+
+  registry.npmmirror.com/@dcloudio/uni-automator/3.0.0-alpha-3060420220922001_vue@3.2.39:
+    resolution: {integrity: sha512-wjOyLe18imhHm+8bRZKNi+NCz/GZYutc47haIIYHxsftsKYYMnOJ43ZW3OYkN0mhHKRXwR6ID5xXXYRaY4WRgw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@dcloudio/uni-automator/-/uni-automator-3.0.0-alpha-3060420220922001.tgz}
+    id: registry.npmmirror.com/@dcloudio/uni-automator/3.0.0-alpha-3060420220922001
+    name: '@dcloudio/uni-automator'
+    version: 3.0.0-alpha-3060420220922001
+    dependencies:
+      '@dcloudio/uni-cli-shared': registry.npmmirror.com/@dcloudio/uni-cli-shared/3.0.0-alpha-3060420220922001_vue@3.2.39
       address: registry.npmmirror.com/address/1.2.1
       cross-env: registry.npmmirror.com/cross-env/7.0.3
       debug: registry.npmmirror.com/debug/4.3.4
@@ -642,7 +681,6 @@ packages:
       - supports-color
       - ts-node
       - vue
-    dev: false
 
   registry.npmmirror.com/@dcloudio/uni-cloud/3.0.0-alpha-3060420220922001_vue@3.2.39:
     resolution: {integrity: sha512-SAu7qXIaWLarCxeIwoAT6HBnkEOOo1kwVde3NPKgdhW5aCpT774w31DlQO1G1yuZxn3AqZ9b9UT0esdXisWx1A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@dcloudio/uni-cloud/-/uni-cloud-3.0.0-alpha-3060420220922001.tgz}
@@ -1113,6 +1151,46 @@ packages:
       - vue
     dev: true
 
+  registry.npmmirror.com/@dcloudio/vite-plugin-uni/3.0.0-alpha-3060420220922001_vite@2.9.15+vue@3.2.39:
+    resolution: {integrity: sha512-QkzjRuOiQvhpcylbSdufhugWB8mjzCiQxiWmlXlrPaZCeknf78Zlsz/ga4iSr2c6BWXhrI1/tqfuXjItWPt9EQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@dcloudio/vite-plugin-uni/-/vite-plugin-uni-3.0.0-alpha-3060420220922001.tgz}
+    id: registry.npmmirror.com/@dcloudio/vite-plugin-uni/3.0.0-alpha-3060420220922001
+    name: '@dcloudio/vite-plugin-uni'
+    version: 3.0.0-alpha-3060420220922001
+    engines: {node: ^14.18.0 || >=16.0.0}
+    hasBin: true
+    peerDependencies:
+      vite: 2.9.14
+    dependencies:
+      '@babel/core': registry.npmmirror.com/@babel/core/7.19.1
+      '@babel/plugin-syntax-import-meta': registry.npmmirror.com/@babel/plugin-syntax-import-meta/7.10.4_@babel+core@7.19.1
+      '@babel/plugin-transform-typescript': registry.npmmirror.com/@babel/plugin-transform-typescript/7.19.1_@babel+core@7.19.1
+      '@dcloudio/uni-cli-shared': registry.npmmirror.com/@dcloudio/uni-cli-shared/3.0.0-alpha-3060420220922001_vue@3.2.39
+      '@dcloudio/uni-shared': registry.npmmirror.com/@dcloudio/uni-shared/3.0.0-alpha-3060420220922001
+      '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/4.2.1
+      '@vitejs/plugin-legacy': registry.npmmirror.com/@vitejs/plugin-legacy/1.8.2_vite@2.9.15
+      '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/2.3.4_vite@2.9.15+vue@3.2.39
+      '@vitejs/plugin-vue-jsx': registry.npmmirror.com/@vitejs/plugin-vue-jsx/1.3.10
+      '@vue/compiler-core': registry.npmmirror.com/@vue/compiler-core/3.2.39
+      '@vue/compiler-dom': registry.npmmirror.com/@vue/compiler-dom/3.2.39
+      '@vue/compiler-sfc': registry.npmmirror.com/@vue/compiler-sfc/3.2.39
+      '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.39
+      cac: registry.npmmirror.com/cac/6.7.9
+      debug: registry.npmmirror.com/debug/4.3.4
+      estree-walker: registry.npmmirror.com/estree-walker/2.0.2
+      express: registry.npmmirror.com/express/4.18.1
+      fast-glob: registry.npmmirror.com/fast-glob/3.2.12
+      fs-extra: registry.npmmirror.com/fs-extra/10.1.0
+      hash-sum: registry.npmmirror.com/hash-sum/2.0.0
+      jsonc-parser: registry.npmmirror.com/jsonc-parser/3.2.0
+      picocolors: registry.npmmirror.com/picocolors/1.0.0
+      vite: registry.npmmirror.com/vite/2.9.15
+    transitivePeerDependencies:
+      - postcss
+      - supports-color
+      - ts-node
+      - vue
+    dev: true
+
   registry.npmmirror.com/@esbuild/linux-loong64/0.14.54:
     resolution: {integrity: sha512-bZBrLAIX1kpWelV0XemxBZllyRmM6vgFQQG2GdNb+r3Fkp0FOh1NJSvekXDs7jq70k4euu1cryLMfU+mTXlEpw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@esbuild/linux-loong64/-/linux-loong64-0.14.54.tgz}
     name: '@esbuild/linux-loong64'
@@ -1357,7 +1435,7 @@ packages:
       vite: registry.npmmirror.com/vite/2.9.15
     dev: true
 
-  registry.npmmirror.com/@vitejs/plugin-vue/2.3.4_vue@3.2.39:
+  registry.npmmirror.com/@vitejs/plugin-vue/2.3.4_vite@2.9.15+vue@3.2.39:
     resolution: {integrity: sha512-IfFNbtkbIm36O9KB8QodlwwYvTEsJb4Lll4c2IwB3VHc2gie2mSPtSzL0eYay7X2jd/2WX02FjSGTWR6OPr/zg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-2.3.4.tgz}
     id: registry.npmmirror.com/@vitejs/plugin-vue/2.3.4
     name: '@vitejs/plugin-vue'
@@ -1367,8 +1445,8 @@ packages:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
+      vite: registry.npmmirror.com/vite/2.9.15
       vue: registry.npmmirror.com/vue/3.2.39
-    dev: false
 
   registry.npmmirror.com/@vue/babel-helper-vue-transform-on/1.0.2:
     resolution: {integrity: sha512-hz4R8tS5jMn8lDq6iD+yWL6XNB699pGIVLk7WSJnn1dbpjaazsjZQkieJoRX6gW5zpYSCFqQ7jUquPNY65tQYA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/babel-helper-vue-transform-on/-/babel-helper-vue-transform-on-1.0.2.tgz}
@@ -1461,7 +1539,6 @@ packages:
     version: 3.2.39
     dependencies:
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.39
-    dev: false
 
   registry.npmmirror.com/@vue/runtime-core/3.2.39:
     resolution: {integrity: sha512-xKH5XP57JW5JW+8ZG1khBbuLakINTgPuINKL01hStWLTTGFOrM49UfCFXBcFvWmSbci3gmJyLl2EAzCaZWsx8g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/runtime-core/-/runtime-core-3.2.39.tgz}
@@ -1470,7 +1547,6 @@ packages:
     dependencies:
       '@vue/reactivity': registry.npmmirror.com/@vue/reactivity/3.2.39
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.39
-    dev: false
 
   registry.npmmirror.com/@vue/runtime-dom/3.2.39:
     resolution: {integrity: sha512-4G9AEJP+sLhsqf5wXcyKVWQKUhI+iWfy0hWQgea+CpaTD7BR0KdQzvoQdZhwCY6B3oleSyNLkLAQwm0ya/wNoA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/runtime-dom/-/runtime-dom-3.2.39.tgz}
@@ -1480,7 +1556,6 @@ packages:
       '@vue/runtime-core': registry.npmmirror.com/@vue/runtime-core/3.2.39
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.39
       csstype: registry.npmmirror.com/csstype/2.6.21
-    dev: false
 
   registry.npmmirror.com/@vue/server-renderer/3.2.39:
     resolution: {integrity: sha512-1yn9u2YBQWIgytFMjz4f/t0j43awKytTGVptfd3FtBk76t1pd8mxbek0G/DrnjJhd2V7mSTb5qgnxMYt8Z5iSQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/server-renderer/-/server-renderer-3.2.39.tgz}
@@ -1504,7 +1579,6 @@ packages:
       '@vue/compiler-ssr': registry.npmmirror.com/@vue/compiler-ssr/3.2.39
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.39
       vue: registry.npmmirror.com/vue/3.2.39
-    dev: false
 
   registry.npmmirror.com/@vue/shared/3.2.39:
     resolution: {integrity: sha512-D3dl2ZB9qE6mTuWPk9RlhDeP1dgNRUKC3NJxji74A4yL8M2MwlhLKUC/49WHjrNzSPug58fWx/yFbaTzGAQSBw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/shared/-/shared-3.2.39.tgz}
@@ -1815,7 +1889,6 @@ packages:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/csstype/-/csstype-2.6.21.tgz}
     name: csstype
     version: 2.6.21
-    dev: false
 
   registry.npmmirror.com/debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/debug/-/debug-2.6.9.tgz}
@@ -3313,7 +3386,6 @@ packages:
       rollup: registry.npmmirror.com/rollup/2.77.3
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
-    dev: true
 
   registry.npmmirror.com/vue-class-component/8.0.0-rc.1:
     resolution: {integrity: sha512-w1nMzsT/UdbDAXKqhwTmSoyuJzUXKrxLE77PCFVuC6syr8acdFDAq116xgvZh9UCuV0h+rlCtxXolr3Hi3HyPQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vue-class-component/-/vue-class-component-8.0.0-rc.1.tgz}
@@ -3373,7 +3445,6 @@ packages:
       '@vue/runtime-dom': registry.npmmirror.com/@vue/runtime-dom/3.2.39
       '@vue/server-renderer': registry.npmmirror.com/@vue/server-renderer/3.2.39_vue@3.2.39
       '@vue/shared': registry.npmmirror.com/@vue/shared/3.2.39
-    dev: false
 
   registry.npmmirror.com/vuex/4.0.2_vue@3.2.39:
     resolution: {integrity: sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vuex/-/vuex-4.0.2.tgz}

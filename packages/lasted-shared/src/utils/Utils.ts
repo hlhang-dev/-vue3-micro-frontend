@@ -50,6 +50,27 @@ export class Utils {
     return object && typeof object === 'boolean'
   }
 
+  public static objToUrlParam(obj?: object, question: boolean = true): string {
+    let queryParams = ''
+    let count = 0
+    if (obj) {
+      for (const key of Object.keys(obj)) {
+        // @ts-ignore
+        const value = obj[key]
+        if (value || value === 0) {
+          count++
+          const param = key + '=' + value
+          if (count === 1 && question) {
+            queryParams = '?' + param
+          } else {
+            queryParams = queryParams + '&' + param
+          }
+        }
+      }
+    }
+    return queryParams
+  }
+
   public static hasValue<T>(param: T) {
     let hasValue: boolean
     if (param === undefined || param === null || param === '') {
