@@ -37,22 +37,24 @@ export class UniAppManagement {
     const updateManager = uni.getUpdateManager()
     updateManager.onCheckForUpdate((result) => {
       if (result.hasUpdate) {
-        updateManager.onUpdateReady(this.onUpdateApplicationReady)
+        updateManager.onUpdateReady(() => {
+          UniAppManagement.onUpdateApplicationReady()
+        })
         updateManager.onUpdateFailed(() => {
-          this.doShowModal(Lang.UPDATE_NOTICE_TITLE, Lang.UPDATE_NOTICE_FAILED_CONTENT, false, this.onUpdateFailed)
+          UniAppManagement.doShowModal(Lang.UPDATE_NOTICE_TITLE, Lang.UPDATE_NOTICE_FAILED_CONTENT, false, this.onUpdateFailed)
         })
       }
     })
   }
 
   private static onUpdateApplicationReady() {
-    this.doShowModal(Lang.UPDATE_NOTICE_TITLE, Lang.UPDATE_NOTICE_READY_CONTENT, true,this.onUpdateApplicationReadyShowModelCallback)
+    UniAppManagement.doShowModal(Lang.UPDATE_NOTICE_TITLE, Lang.UPDATE_NOTICE_READY_CONTENT, true,UniAppManagement.onUpdateApplicationReadyShowModelCallback)
   }
 
   private static onUpdateApplicationReadyShowModelCallback (code: ShowModelCodeEnum) {
     switch (code) {
       case ShowModelCodeEnum.SUCCESS:
-        this.restartApplication()
+        UniAppManagement.restartApplication()
         break
       case ShowModelCodeEnum.FAILED:
         break

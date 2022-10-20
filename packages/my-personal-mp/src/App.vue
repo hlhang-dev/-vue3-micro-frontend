@@ -1,14 +1,14 @@
-<script setup lang="ts">
-import { onLaunch, onShow, onHide } from '@dcloudio/uni-app'
-import HttpDefinition from './pages/bens/common/HttpDefinition'
-import { HttpInit } from '@lasted/uni-shared'
+<script lang="ts">
+import { Vue, Options } from 'vue-property-decorator'
+import { CheckMiniProgramUpdate } from '@lasted/uni-shared'
 
-onLaunch(() => {
-  HttpInit.getInstance().init(new HttpDefinition())
+@Options({
+  name: 'App'
 })
-onShow(() => {
-})
-onHide(() => {
-})
+export default class App extends Vue {
+   @CheckMiniProgramUpdate
+    onShow () {
+      //console.log('onShow')
+    }
+}
 </script>
-<style></style>
