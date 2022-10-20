@@ -1,7 +1,7 @@
 import TokenConstant from '../definition/token/TokenConstant'
-import UniErrorMsgEnum from '../definition/UniErrorMsgEnum'
+import { UniErrorMsgEnum } from '../definition/msg/UniErrorMsgEnum'
 
-export class LoginManagement{
+export class LoginManagement {
   private static _instance: LoginManagement
 
 
@@ -11,7 +11,6 @@ export class LoginManagement{
     }
     return this._instance
   }
-
 
 
   isAccountLogin() {

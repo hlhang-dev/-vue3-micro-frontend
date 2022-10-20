@@ -6,7 +6,7 @@ import { LoginManagement } from '../management/LoginManagement'
 import { UniAppManagement } from '../management/UniAppManagement'
 import { PageManagement } from '../management/PageManagement'
 import MyResponseCodeEnum from '../definition/http/MyResponseCodeEnum'
-import { IHttpDefinition } from '../definition/IHttpDefinition'
+import { IHttpDefinition } from '../definition/http/IHttpDefinition'
 
 export class HttpService {
   private static SERVER_API_TIMEOUT: number = 0

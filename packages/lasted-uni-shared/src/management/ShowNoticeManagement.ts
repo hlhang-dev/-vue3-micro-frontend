@@ -1,4 +1,4 @@
-import NoticeDurationEnum from '../definition/NoticeDurationEnum'
+import NoticeDurationEnum from '../definition/notice/NoticeDurationEnum'
 
 export class ShowNoticeManagement {
   public static showNormalNotice(title: string = '', duration = NoticeDurationEnum.NORMAL) {

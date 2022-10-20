@@ -1,5 +1,5 @@
 import {HttpService } from './HttpService'
-import { IHttpDefinition } from '../definition/IHttpDefinition'
+import { IHttpDefinition } from '../definition/http/IHttpDefinition'
 
 export class HttpInit {
 

@@ -1,4 +1,4 @@
-enum UniErrorMsgEnum {
+export enum UniErrorMsgEnum {
   LOGIN_OK = 'login:ok',
   GET_PHONE_NUMBER_OK = 'getPhoneNumber:ok',
   CHECK_SESSION_OK = 'checkSession:ok',
@@ -8,4 +8,3 @@ enum UniErrorMsgEnum {
   REQUEST_PAYMENT_CANCEL = 'requestPayment:fail cancel'
 }
 
-export default UniErrorMsgEnum

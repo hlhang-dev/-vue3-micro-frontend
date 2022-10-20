@@ -1,4 +1,4 @@
-import { IPageUrl } from './IPageUrl'
+import { IPageUrl } from '../interface/IPageUrl'
 
 export interface IHttpDefinition {
   timeout: number
