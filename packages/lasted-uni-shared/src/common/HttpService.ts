@@ -1,6 +1,6 @@
 import ApiUnifiedVO from '../beans/http/vo/ApiUnifiedVO'
 import HttpStatusCode from '../definition/http/HttpStatusEnum'
-import Lang from '../definition/Lang'
+import { Lang } from '../definition/Lang'
 import { ShowNoticeManagement } from '../management/ShowNoticeManagement'
 import { LoginManagement } from '../management/LoginManagement'
 import { UniAppManagement } from '../management/UniAppManagement'
@@ -46,7 +46,7 @@ export class HttpService {
             reject()
             break
         }
-      }, headers, this.IS_SHOW_LOADING ? showLoading : false)
+      }, headers, this.IS_SHOW_LOADING ? showLoading: false)
     })
   }
 

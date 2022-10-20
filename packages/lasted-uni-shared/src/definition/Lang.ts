@@ -1,4 +1,4 @@
-enum Lang {
+export enum Lang {
   // common
   COPY_SUCCESS = '复制成功',
   COPY_FAILED = '复制失败，请重试',
@@ -21,6 +21,11 @@ enum Lang {
   LOGIN_BE_OVERDUE = '登录过期，请重新登录',
   NOT_LOGGED_IN = '未登录,请前往登录',
 
+  // update
+  UPDATE_NOTICE_TITLE = '更新提示',
+  UPDATE_NOTICE_FAILED_CONTENT = '新的版本下载失败，请检查网络连接',
+  UPDATE_NOTICE_READY_CONTENT = '新版本已经准备好，是否重启应用？'
+
 }
 
-export default Lang
+

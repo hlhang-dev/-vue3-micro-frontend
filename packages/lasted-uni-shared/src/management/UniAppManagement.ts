@@ -1,9 +1,10 @@
 import { LoadingManagement } from './LoadingManagement'
 import MyResponseCodeEnum from '../definition/http/MyResponseCodeEnum'
-import { MyJsonConverter, Utils } from '@lasted/shared'
+import { MyJsonConverter } from '@lasted/shared'
 import ApiUnifiedVO from '../beans/http/vo/ApiUnifiedVO'
 import UniUtils from '../common/UniUtils'
 import ShowModelCodeEnum from '../definition/http/ShowModelCodeEnum'
+import { Lang } from '../definition/Lang'
 
 export class UniAppManagement {
   public static wxRequest<T>(url: string, method: string, data: object, timeout: number, callback: (requestCode: MyResponseCodeEnum, result?: ApiUnifiedVO) => void, headers: object = {}, showLoading: boolean = true) {
@@ -12,7 +13,7 @@ export class UniAppManagement {
     }
     uni.request({
       url: url,
-      method: method as 'OPTIONS' | 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'CONNECT',
+      method: <'OPTIONS' | 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'CONNECT'>method,
       header: UniUtils.buildHeader(headers),
       data: data,
       timeout: timeout,
@@ -32,22 +33,75 @@ export class UniAppManagement {
     })
   }
 
-  public static doShowModal(title: string, content: string, showCancel: boolean, callback: (code: ShowModelCodeEnum) => void) {
+  public static doProgramUpdate() {
+    const updateManager = uni.getUpdateManager()
+    updateManager.onCheckForUpdate((result) => {
+      if (result.hasUpdate) {
+        updateManager.onUpdateReady(this.onUpdateApplicationReady)
+        updateManager.onUpdateFailed(() => {
+          this.doShowModal(Lang.UPDATE_NOTICE_TITLE, Lang.UPDATE_NOTICE_FAILED_CONTENT, false, this.onUpdateFailed)
+        })
+      }
+    })
+  }
+
+  private static onUpdateApplicationReady() {
+    this.doShowModal(Lang.UPDATE_NOTICE_TITLE, Lang.UPDATE_NOTICE_READY_CONTENT, true,this.onUpdateApplicationReadyShowModelCallback)
+  }
+
+  private static onUpdateApplicationReadyShowModelCallback (code: ShowModelCodeEnum) {
+    switch (code) {
+      case ShowModelCodeEnum.SUCCESS:
+        this.restartApplication()
+        break
+      case ShowModelCodeEnum.FAILED:
+        break
+      case ShowModelCodeEnum.CANCEL:
+        break
+      default:
+        break
+    }
+  }
+
+  private static restartApplication () {
+    uni.getUpdateManager().applyUpdate()
+  }
+
+  private static onUpdateFailed(code: ShowModelCodeEnum) {
+    switch (code) {
+      case ShowModelCodeEnum.SUCCESS:
+        break
+      case ShowModelCodeEnum.FAILED:
+        break
+      case ShowModelCodeEnum.CANCEL:
+        break
+      default:
+        break
+    }
+  }
+
+  public static doShowModal(title: string, content: string, showCancel: boolean, callback?: (code: ShowModelCodeEnum) => void) {
     uni.showModal({
           title: title,
           content: content,
           showCancel: showCancel,
           success: (result) => {
+            let code: ShowModelCodeEnum
             if (result.confirm) {
-              callback(ShowModelCodeEnum.SUCCESS)
+              code = ShowModelCodeEnum.SUCCESS
             } else if (result.cancel) {
-              callback(ShowModelCodeEnum.CANCEL)
+              code = ShowModelCodeEnum.CANCEL
             } else {
-              callback(ShowModelCodeEnum.FAILED)
+              code = ShowModelCodeEnum.FAILED
+            }
+            if (callback) {
+              callback(code)
             }
           },
           fail: () => {
-            callback(ShowModelCodeEnum.FAILED)
+            if (callback) {
+              callback(ShowModelCodeEnum.FAILED)
+            }
           }
         }
     )
