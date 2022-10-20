@@ -4,6 +4,7 @@ importers:
 
   .:
     specifiers:
+      class-validator: ^0.13.2
       json2typescript: '1.3'
       reflect-metadata: ^0.1.13
       tslib: ^2.4.0
@@ -17,6 +18,8 @@ importers:
       typescript: registry.npmmirror.com/typescript/4.8.3
       vue-class-component: registry.npmmirror.com/vue-class-component/8.0.0-rc.1
       vue-property-decorator: registry.npmmirror.com/vue-property-decorator/10.0.0-rc.3_vue-class-component@8.0.0-rc.1
+    devDependencies:
+      class-validator: registry.npmmirror.com/class-validator/0.13.2
 
   packages/lasted-shared:
     specifiers: {}
@@ -1762,6 +1765,15 @@ packages:
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
 
+  registry.npmmirror.com/class-validator/0.13.2:
+    resolution: {integrity: sha512-yBUcQy07FPlGzUjoLuUfIOXzgynnQPPruyK1Ge2B74k9ROwnle1E+NxLWnUv5OLU8hA/qL5leAE9XnXq3byaBw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/class-validator/-/class-validator-0.13.2.tgz}
+    name: class-validator
+    version: 0.13.2
+    dependencies:
+      libphonenumber-js: registry.npmmirror.com/libphonenumber-js/1.10.14
+      validator: registry.npmmirror.com/validator/13.7.0
+    dev: true
+
   registry.npmmirror.com/color-convert/1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/color-convert/-/color-convert-1.9.3.tgz}
     name: color-convert
@@ -2600,6 +2612,12 @@ packages:
     dependencies:
       invert-kv: registry.npmmirror.com/invert-kv/3.0.1
 
+  registry.npmmirror.com/libphonenumber-js/1.10.14:
+    resolution: {integrity: sha512-McGS7GV/WjJ2KjfOGhJU1oJn29RYeo7Q+RpANRbUNMQ9gj5XArpbjurSuyYPTejFwbaUojstQ4XyWCrAzGOUXw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/libphonenumber-js/-/libphonenumber-js-1.10.14.tgz}
+    name: libphonenumber-js
+    version: 1.10.14
+    dev: true
+
   registry.npmmirror.com/licia/1.37.0:
     resolution: {integrity: sha512-jX49+WmzikOPGNrcy/giS23HCI8Pb7RF585Ei5d7oWF4WMelaZWv4odqQNdT0jtHkoUxqSvPz67Jvyq06xamUA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/licia/-/licia-1.37.0.tgz}
     name: licia
@@ -3353,6 +3371,13 @@ packages:
     name: utils-merge
     version: 1.0.1
     engines: {node: '>= 0.4.0'}
+    dev: true
+
+  registry.npmmirror.com/validator/13.7.0:
+    resolution: {integrity: sha512-nYXQLCBkpJ8X6ltALua9dRrZDHVYxjJ1wgskNt1lH9fzGjs3tgojGSCBjmEPwkWS1y29+DrizMTW19Pr9uB2nw==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/validator/-/validator-13.7.0.tgz}
+    name: validator
+    version: 13.7.0
+    engines: {node: '>= 0.10'}
     dev: true
 
   registry.npmmirror.com/vary/1.1.2:

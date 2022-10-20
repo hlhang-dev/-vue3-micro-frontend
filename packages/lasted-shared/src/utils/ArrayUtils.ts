@@ -6,4 +6,8 @@ export class ArrayUtils {
   public static isArray<T>(arr: T[]) {
     return Array.isArray(arr)
   }
+
+  public static getArrayFirst<T>(arr: T[]) {
+    return arr[0]
+  }
 }
