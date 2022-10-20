@@ -1,6 +1,7 @@
 import { Options, Vue } from 'vue-class-component'
 import { MyJsonConverter } from '@lasted/shared'
-import BasePageDTO from '../beans/BasePageDTO'
+import BasePageDTO from '../../beans/common/BasePageDTO'
+import { HttpService } from '@lasted/uni-shared'
 
 @Options({
   name: 'Index'
@@ -11,6 +12,6 @@ export default class Index extends Vue {
 
   created() {
     this.basePageDTO = MyJsonConverter.getInstance().deserializeObject({ page: 1 }, BasePageDTO)
-    //HttpService.doRequest('http://localhost:8080','get')
+    HttpService.doRequest(import.meta.env.VITE_APP_BASE_URL,'get')
   }
 }

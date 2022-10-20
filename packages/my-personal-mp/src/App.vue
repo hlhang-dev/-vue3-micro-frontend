@@ -1,6 +1,7 @@
 <script lang="ts">
 import { Vue, Options } from 'vue-property-decorator'
-import { CheckMiniProgramUpdate } from '@lasted/uni-shared'
+import { CheckMiniProgramUpdate, HttpInit } from '@lasted/uni-shared'
+import HttpDefinition from './beans/common/HttpDefinition'
 
 @Options({
   name: 'App'
@@ -8,7 +9,11 @@ import { CheckMiniProgramUpdate } from '@lasted/uni-shared'
 export default class App extends Vue {
    @CheckMiniProgramUpdate
     onShow () {
-      //console.log('onShow')
+
+    }
+
+    onLaunch() {
+      HttpInit.getInstance().init(new HttpDefinition())
     }
 }
 </script>
