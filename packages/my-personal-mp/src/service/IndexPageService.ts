@@ -1,12 +1,12 @@
 import { Options, Vue } from 'vue-class-component'
 import { MyJsonConverter } from '@lasted/shared'
-import BasePageDTO from '../../beans/common/BasePageDTO'
 import { HttpService } from '@lasted/uni-shared'
+import BasePageDTO from '../beans/common/BasePageDTO'
 
 @Options({
-  name: 'Index'
+  name: 'IndexPageService'
 })
-export default class Index extends Vue {
+export default class IndexPageService extends Vue {
   value: string = '测试'
   basePageDTO = new BasePageDTO()
 

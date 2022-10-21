@@ -20,12 +20,14 @@
       "mini-types"
     ],
     "paths": {
+      "@/*": ["src/*"],
       "@lasted/*": [
         "packages/*/src"
       ],
       "tslib": [
         "node_modules/tslib/tslib.d.ts"
-      ]
+      ],
+
     },
     "lib": [
       "esnext",
