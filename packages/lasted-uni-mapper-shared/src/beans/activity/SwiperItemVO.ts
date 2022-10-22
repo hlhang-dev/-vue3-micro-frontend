@@ -4,7 +4,7 @@ import SwiperModeEnum from '../../definition/activity/swiper/SwiperModeEnum'
 import SwiperTypeEnum from '../../definition/activity/swiper/SwiperTypeEnum'
 
 @JsonObject
-class SwiperItemVO {
+export class SwiperItemVO {
   @JsonProperty('type',StringToNumConverter,true)
   type: SwiperTypeEnum = SwiperTypeEnum.ACTIVITY
   @JsonProperty('title',String,true)
@@ -20,5 +20,3 @@ class SwiperItemVO {
   @JsonProperty('time', StringToNumConverter, true)
   time: number = 0
 }
-
-export default SwiperItemVO

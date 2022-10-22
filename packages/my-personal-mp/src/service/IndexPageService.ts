@@ -1,6 +1,5 @@
 import { Options, Vue } from 'vue-class-component'
-import { ActivityMapper } from '@lasted/mapper-shared'
-import SwiperItemVO from '@lasted/mapper-shared/src/beans/activity/SwiperItemVO'
+import { ActivityMapper, SwiperItemVO } from '@lasted/mapper-shared'
 
 @Options({
   name: 'IndexPageService'

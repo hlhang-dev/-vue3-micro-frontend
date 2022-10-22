@@ -1,7 +1,7 @@
-import SwiperItemVO from '../beans/activity/SwiperItemVO'
 import { HttpService } from '@lasted/uni-shared'
 import { MyJsonConverter } from '@lasted/shared'
 import ActivityServerApi from '../definition/server-api/ActivityServerApi'
+import { SwiperItemVO } from '../beans/activity/SwiperItemVO'
 
 export class ActivityMapper {
   private static ACTIVITY_BASE_URL = import.meta.env.VITE_APP_ACTIVITY_BASE_API + ActivityServerApi.prefix + ActivityServerApi.version
