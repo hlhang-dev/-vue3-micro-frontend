@@ -6,7 +6,6 @@ import { LoginManagement } from '../management/LoginManagement'
 import { UniAppManagement } from '../management/UniAppManagement'
 import { PageManagement } from '../management/PageManagement'
 import MyResponseCodeEnum from '../definition/http/MyResponseCodeEnum'
-import { IHttpDefinition } from '../definition/http/IHttpDefinition'
 
 export class HttpService {
   private static SERVER_API_TIMEOUT: number = 0
@@ -17,12 +16,10 @@ export class HttpService {
 
   private static IS_SHOW_LOADING = false
 
-  public static init(httpDefinition: IHttpDefinition) {
-    this.SERVER_API_TIMEOUT = httpDefinition.timeout
-    this.LOGIN_PAGE = httpDefinition.pageUrl.LOGIN_PAGE
-    if (!!httpDefinition.isShowLoading) {
-      this.IS_SHOW_LOADING = httpDefinition.isShowLoading
-    }
+  public static init(loginPage: string, timeout: number, isShowLoading: boolean) {
+    this.SERVER_API_TIMEOUT = timeout
+    this.LOGIN_PAGE = loginPage
+    this.IS_SHOW_LOADING = isShowLoading
   }
 
   public static doRequest(

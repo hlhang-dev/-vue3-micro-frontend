@@ -1,5 +1,4 @@
-import {HttpService } from './HttpService'
-import { IHttpDefinition } from '../definition/http/IHttpDefinition'
+import { HttpService } from './HttpService'
 
 export class HttpInit {
 
@@ -12,7 +11,7 @@ export class HttpInit {
     return this._instance
   }
 
-  init(httpDefinition: IHttpDefinition) {
-      HttpService.init(httpDefinition)
+  init(loginPage: string,timeout: number = Number(import.meta.env.VITE_APP_API_TIMEOUT),isShowLoading: boolean = true) {
+      HttpService.init(loginPage,timeout,isShowLoading)
   }
 }

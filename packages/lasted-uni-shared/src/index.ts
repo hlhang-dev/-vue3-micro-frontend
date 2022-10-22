@@ -1,6 +1,5 @@
 // interface
 export { IPageUrl } from './definition/interface/IPageUrl'
-export { IHttpDefinition } from './definition/http/IHttpDefinition'
 
 
 // Http
