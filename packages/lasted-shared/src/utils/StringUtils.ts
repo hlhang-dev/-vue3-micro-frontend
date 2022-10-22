@@ -1,6 +1,10 @@
 export class StringUtils {
   public static isEmpty<T>(str: T): boolean {
-    return (str && typeof str === 'string' && str.length > 0)
+    return (str && typeof str === 'string' && str.length === 0)
+  }
+
+  public static isNotEmpty<T>(str: T): boolean {
+    return str && typeof str === 'string' && str.length > 0
   }
 
   public static isStr<T>(str: T): boolean {
