@@ -4,7 +4,7 @@ import { StringToBooleanConverter } from '@lasted/shared'
 
 @JsonObject
 export default class BaseServiceVO {
-  @JsonProperty('code', StringToBooleanConverter, true)
+  @JsonProperty('success', Boolean, true)
   success: boolean = false
 
   @JsonProperty('msg', String, true)

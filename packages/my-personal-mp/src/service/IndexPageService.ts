@@ -7,6 +7,7 @@ import SwiperItemVO from '@lasted/mapper-shared/src/beans/activity/SwiperItemVO'
 })
 export default class IndexPageService extends Vue {
   value: string = '测试'
+  swiperList: SwiperItemVO[] = []
 
 
   created() {
@@ -18,6 +19,8 @@ export default class IndexPageService extends Vue {
   }
 
   fetchSwiperListCallback(success: boolean, swiperList: SwiperItemVO[]) {
-    console.log(swiperList)
+    if (success) {
+      this.swiperList = swiperList
+    }
   }
 }
