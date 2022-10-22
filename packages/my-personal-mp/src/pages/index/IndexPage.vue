@@ -2,6 +2,7 @@
   <view class="content">
     {{ value }}
     {{ basePageDTO.page }}
+    <uni-badge text="1"></uni-badge>
   </view>
 </template>
 
