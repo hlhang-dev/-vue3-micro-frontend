@@ -39,6 +39,7 @@ export class ArrayUtils {
       for (let i = beginIndexInclude; i < arr.length; i++) {
         if (matcher.match(arr[i])) {
           item = arr[i]
+          break
         }
       }
     }

@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Vue, Options } from 'vue-property-decorator'
 import { CheckMiniProgramUpdate, HttpInit } from '@lasted/uni-shared'
-import HttpDefinition from './beans/common/HttpDefinition'
+import { HttpDefinition } from '@lasted/mapper-shared'
 
 @Options({
   name: 'App'

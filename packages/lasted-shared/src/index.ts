@@ -9,7 +9,7 @@ export { Exception } from './exception/Exception'
 export { IllegalArgumentException } from './exception/IllegalArgumentException'
 
 
-export { Service } from './decorator/Service'
+export { Mapper } from './decorator/Mapper'
 export { Autowired } from './decorator/Autowired'
 
 export { MyJsonConverter } from './converter/json-ts/MyJsonConverter'

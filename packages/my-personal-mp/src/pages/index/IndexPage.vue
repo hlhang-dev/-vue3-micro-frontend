@@ -1,7 +1,6 @@
 <template>
   <view class="content" >
     {{ value }}
-    {{ basePageDTO.page }}
     <view class="uni-primary">主色</view>
     <uni-badge text="1"></uni-badge>
   </view>

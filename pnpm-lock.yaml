@@ -28,6 +28,14 @@ importers:
   packages/lasted-shared:
     specifiers: {}
 
+  packages/lasted-uni-mapper-shared:
+    specifiers:
+      '@lasted/shared': workspace:^1.0.0
+      '@lasted/uni-shared': workspace:^1.0.0
+    dependencies:
+      '@lasted/shared': link:../lasted-shared
+      '@lasted/uni-shared': link:../lasted-uni-shared
+
   packages/lasted-uni-shared:
     specifiers:
       '@dcloudio/types': ^3.0.14
@@ -67,6 +75,7 @@ importers:
       '@dcloudio/uni-stacktracey': 3.0.0-alpha-3060420220922001
       '@dcloudio/uni-ui': ^1.4.22
       '@dcloudio/vite-plugin-uni': 3.0.0-alpha-3060420220922001
+      '@lasted/mapper-shared': workspace:^1.0.0
       '@lasted/shared': workspace:^1.0.0
       '@lasted/uni-shared': workspace:^1.0.0
       vite: ^2.9.14
@@ -87,6 +96,7 @@ importers:
       '@dcloudio/uni-mp-weixin': registry.npmmirror.com/@dcloudio/uni-mp-weixin/3.0.0-alpha-3060420220922001_vue@3.2.39
       '@dcloudio/uni-quickapp-webview': registry.npmmirror.com/@dcloudio/uni-quickapp-webview/3.0.0-alpha-3060420220922001_vue@3.2.39
       '@dcloudio/uni-ui': registry.npmmirror.com/@dcloudio/uni-ui/1.4.22
+      '@lasted/mapper-shared': link:../lasted-uni-mapper-shared
       '@lasted/shared': link:../lasted-shared
       '@lasted/uni-shared': link:../lasted-uni-shared
       vue: registry.npmmirror.com/vue/3.2.39
