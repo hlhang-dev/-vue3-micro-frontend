@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "npx only-allow pnpm"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "vue-property-decorator": "10.0.0-rc.3"
   },
   "devDependencies": {
-    "class-validator": "^0.13.2"
+    "class-validator": "^0.13.2",
+    "sass": "1.45.1"
   }
 }

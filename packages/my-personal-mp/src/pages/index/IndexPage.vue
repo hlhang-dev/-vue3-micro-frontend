@@ -17,5 +17,8 @@ export default class IndexPage extends mixins(IndexPageService) {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.content {
+    background: $uni-bg-color-mask;
+}
 </style>
