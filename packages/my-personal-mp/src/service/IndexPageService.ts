@@ -10,16 +10,5 @@ export default class IndexPageService extends Vue {
 
 
   created() {
-    this.fetchSwiperList()
-  }
-
-  fetchSwiperList() {
-    ActivityMapper.fetchSwiperList(this.fetchSwiperListCallback)
-  }
-
-  fetchSwiperListCallback(success: boolean, swiperList: SwiperItemVO[]) {
-    if (success) {
-      this.swiperList = swiperList
-    }
   }
 }
