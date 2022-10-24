@@ -10,11 +10,31 @@
 <script lang="ts">
 import { mixins, Options } from 'vue-property-decorator'
 import IndexPageService from '@/service/IndexPageService'
+import { onLoad, onShow } from '@dcloudio/uni-app'
+import ActivityService from '@/service/ActivityService'
+
+interface IIndexPageOption {
+
+}
 
 @Options({
   name: 'IndexPage'
 })
-export default class IndexPage extends mixins(IndexPageService) {
+export default class IndexPage extends mixins(IndexPageService,ActivityService) {
+
+  created() {
+    onLoad(this.onLoad)
+    onShow(this.onShow)
+  }
+
+  onLoad (option: IIndexPageOption) {
+    this.work()
+    this.fetchActivityList()
+  }
+
+  onShow () {
+
+  }
 }
 </script>
 

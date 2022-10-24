@@ -1,6 +1,5 @@
-import { Options, Vue } from 'vue-class-component'
+import { Options, Vue } from 'vue-property-decorator'
 import { SwiperItemVO } from '@lasted/mapper-shared'
-import { HttpService, TokenManagement } from '@lasted/uni-shared'
 
 @Options({
   name: 'IndexPageService'
