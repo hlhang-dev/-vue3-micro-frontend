@@ -1,5 +1,5 @@
 <template>
-  <view class="content" >
+  <view class="content">
     {{ value }}
     <view class="uni-primary">主色</view>
     <image v-for="item in swiperList" :src="item.img" :key="item.src"/>
@@ -8,16 +8,19 @@
 </template>
 
 <script lang="ts">
-import  { mixins, Options } from 'vue-property-decorator'
-import IndexPageService from '@/service/IndexPageService'
+import { Options, Vue } from 'vue-property-decorator'
+import { onLoad } from '@dcloudio/uni-app'
 
 @Options({
   name: 'IndexPage'
 })
-export default class IndexPage extends mixins(IndexPageService) {
+export default class IndexPage extends Vue {
+
 
   created() {
-    this.work()
+    onLoad((params) => {
+      console.log('onLoad',params)
+    })
   }
 
 }
@@ -25,6 +28,6 @@ export default class IndexPage extends mixins(IndexPageService) {
 
 <style lang="scss" scoped>
 .content {
-    background: $uni-bg-color-mask;
+  background: $uni-bg-color-mask;
 }
 </style>

@@ -9,12 +9,6 @@ export default class IndexPageService extends Vue {
   value: string = '测试'
   swiperList: SwiperItemVO[] = []
 
-  created () {
-    TokenManagement.getInstance().saveAccountToken('ewe')
-    HttpService.doRequest('https://localhost:8080','get',undefined,{hellos: '3232'},false)
-    HttpService.doRequest('https://localhost:8080','get',undefined)
-  }
-
   work () {
     console.log('正在工作')
   }
