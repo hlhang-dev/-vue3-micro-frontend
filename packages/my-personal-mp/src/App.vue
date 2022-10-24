@@ -13,7 +13,7 @@ export default class App extends Vue {
   }
 
   onLaunch() {
-    HttpInit.getInstance().init(PageUrl.LOGIN_PAGE,3000,{hello: 2})
+    HttpInit.getInstance().init(PageUrl.LOGIN_PAGE,Number(import.meta.env.VITE_APP_API_TIMEOUT))
   }
 }
 </script>
