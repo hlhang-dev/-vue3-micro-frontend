@@ -7,14 +7,14 @@ import ShowModelCodeEnum from '../definition/http/ShowModelCodeEnum'
 import { Lang } from '../definition/Lang'
 
 export class UniAppManagement {
-  public static wxRequest<T>(url: string, method: string, data: object, timeout: number, callback: (requestCode: MyResponseCodeEnum, result?: ApiUnifiedVO) => void, headers: object = {}, showLoading: boolean = true) {
+  public static wxRequest<T>(url: string, method: string, data: object, timeout: number, callback: (requestCode: MyResponseCodeEnum, result?: ApiUnifiedVO) => void, headers: object = {}, showLoading: boolean = true,globalHeaders: object = {}) {
     if (showLoading) {
       LoadingManagement.getInstance().show()
     }
     uni.request({
       url: url,
       method: <'OPTIONS' | 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'CONNECT'>method,
-      header: UniUtils.buildHeader(headers),
+      header: UniUtils.buildHeader(headers,globalHeaders),
       data: data,
       timeout: timeout,
       success: (res) => {

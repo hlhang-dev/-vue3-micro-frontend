@@ -5,6 +5,12 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		},
+		{
+			"path": "pages/login/LoginPage",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
 		}
 	],
 	"easycom": {

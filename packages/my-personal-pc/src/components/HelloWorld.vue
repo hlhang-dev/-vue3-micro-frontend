@@ -3,12 +3,12 @@
 import { Options, Vue } from 'vue-property-decorator'
 
 
+
 @Options({
   name: ''
 })
 export default class HelloWorld extends Vue{
-  created () {
-  }
+
 }
 </script>
 

@@ -8,13 +8,17 @@
 </template>
 
 <script lang="ts">
-import { mixins, Options } from 'vue-property-decorator'
+import  { mixins, Options } from 'vue-property-decorator'
 import IndexPageService from '@/service/IndexPageService'
 
 @Options({
   name: 'IndexPage'
 })
 export default class IndexPage extends mixins(IndexPageService) {
+
+  created() {
+    this.work()
+  }
 
 }
 </script>

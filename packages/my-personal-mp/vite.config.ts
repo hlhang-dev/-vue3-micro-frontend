@@ -6,6 +6,13 @@ export default defineConfig({
   plugins: [uni()],
   // @ts-ignore
   optimizeDeps: ['@dcloudio/uni-ui'],
+  build: {
+    rollupOptions: {
+      external: [
+        /^class-validator:*/
+      ]
+    }
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src')

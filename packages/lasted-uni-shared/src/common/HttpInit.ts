@@ -11,7 +11,7 @@ export class HttpInit {
     return this._instance
   }
 
-  init(loginPage: string,timeout: number = Number(import.meta.env.VITE_APP_API_TIMEOUT),isShowLoading: boolean = true) {
-      HttpService.init(loginPage,timeout,isShowLoading)
+  init(loginPage: string, timeout: number = Number(import.meta.env.VITE_APP_API_TIMEOUT), header: object = {}, isShowLoading: boolean = true) {
+    HttpService.init(loginPage, timeout, header, isShowLoading)
   }
 }

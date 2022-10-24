@@ -16,10 +16,13 @@ export class HttpService {
 
   private static IS_SHOW_LOADING = false
 
-  public static init(loginPage: string, timeout: number, isShowLoading: boolean) {
+  private static HEADER = {}
+
+  public static init(loginPage: string, timeout: number, header: object = {},isShowLoading: boolean) {
     this.SERVER_API_TIMEOUT = timeout
     this.LOGIN_PAGE = loginPage
     this.IS_SHOW_LOADING = isShowLoading
+    this.HEADER  = header
   }
 
   public static doRequest(
@@ -27,7 +30,7 @@ export class HttpService {
       method: string,
       data: object = {},
       headers?: object,
-      showLoading = true
+      showLoading = true,
   ): Promise<ApiUnifiedVO> {
     return new Promise<ApiUnifiedVO>((resolve, reject) => {
       UniAppManagement.wxRequest(url, method, data, HttpService.SERVER_API_TIMEOUT, (responseCodeEnum: MyResponseCodeEnum, result?: ApiUnifiedVO) => {
@@ -43,7 +46,7 @@ export class HttpService {
             reject()
             break
         }
-      }, headers, this.IS_SHOW_LOADING ? showLoading: false)
+      }, headers, this.IS_SHOW_LOADING ? showLoading: false,this.HEADER)
     })
   }
 
