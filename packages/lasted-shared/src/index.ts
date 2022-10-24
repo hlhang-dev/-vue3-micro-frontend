@@ -21,6 +21,7 @@ export { StringToFloatConverter } from './converter/json-ts/StringToFloatConvert
 export { StringToNumConverter } from './converter/json-ts/StringToNumConverter'
 export { StringToYuanConverter } from './converter/json-ts/StringToYuanConverter'
 
+export { MyValidator } from './validator/MyValidator'
 
 export { ConcurrentHashMap } from './map/ConcurrentHashMap'
 

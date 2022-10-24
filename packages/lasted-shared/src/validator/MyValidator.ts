@@ -1,7 +1,7 @@
 import { validate, ValidatorOptions } from 'class-validator'
 import { ArrayUtils } from '../utils/ArrayUtils'
 
-export default class MyValidator {
+export class MyValidator {
   private static _instance: MyValidator
 
   public static getInstance(): MyValidator {

@@ -48,10 +48,10 @@ export class UniAppManagement {
   }
 
   private static onUpdateApplicationReady() {
-    UniAppManagement.doShowModal(Lang.UPDATE_NOTICE_TITLE, Lang.UPDATE_NOTICE_READY_CONTENT, true,UniAppManagement.onUpdateApplicationReadyShowModelCallback)
+    UniAppManagement.doShowModal(Lang.UPDATE_NOTICE_TITLE, Lang.UPDATE_NOTICE_READY_CONTENT, true, UniAppManagement.onUpdateApplicationReadyShowModelCallback)
   }
 
-  private static onUpdateApplicationReadyShowModelCallback (code: ShowModelCodeEnum) {
+  private static onUpdateApplicationReadyShowModelCallback(code: ShowModelCodeEnum) {
     switch (code) {
       case ShowModelCodeEnum.SUCCESS:
         UniAppManagement.restartApplication()
@@ -65,7 +65,7 @@ export class UniAppManagement {
     }
   }
 
-  private static restartApplication () {
+  private static restartApplication() {
     uni.getUpdateManager().applyUpdate()
   }
 
@@ -80,6 +80,15 @@ export class UniAppManagement {
       default:
         break
     }
+  }
+
+  public static getSystemInfo(callback: (result: UniNamespace.GetSystemInfoResult) => void) {
+    uni.getSystemInfo({
+          success: (result) => {
+                callback(result)
+          }
+        }
+    )
   }
 
   public static doShowModal(title: string, content: string, showCancel: boolean, callback?: (code: ShowModelCodeEnum) => void) {
