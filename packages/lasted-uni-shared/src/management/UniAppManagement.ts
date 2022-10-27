@@ -5,6 +5,11 @@ import ApiUnifiedVO from '../beans/http/vo/ApiUnifiedVO'
 import UniUtils from '../common/UniUtils'
 import ShowModelCodeEnum from '../definition/http/ShowModelCodeEnum'
 import { Lang } from '../definition/Lang'
+import { UniProviderServiceEnum } from '../definition/coomon/UniProviderServiceEnum'
+import { UniPaymentProviderEnum } from '../definition/coomon/UniPaymentProviderEnum'
+import { JsApiPaymentDTO } from '../beans/payment/JsApiPaymentDTO'
+import { UniErrorMsgEnum } from '../definition/msg/UniErrorMsgEnum'
+import { RequestPaymentCode } from '../definition/coomon/RequestPaymentCode'
 
 export class UniAppManagement {
   public static wxRequest<T>(url: string, method: string, data: object, timeout: number, callback: (requestCode: MyResponseCodeEnum, result?: ApiUnifiedVO) => void, headers: object = {}, showLoading: boolean = true, globalHeaders: object = {}) {
@@ -97,6 +102,42 @@ export class UniAppManagement {
           }
         }
     )
+  }
+
+  public static getProvider(service: UniProviderServiceEnum) {
+    return new Promise((resolve, reject) => {
+      uni.getProvider({
+        service: <'oauth' | 'share' | 'payment' | 'push'>service,
+        success: (result) => {
+          resolve(result.provider)
+        },
+        fail: (error) => {
+          reject(error)
+        }
+      })
+    })
+  }
+
+  public static async doRequestPayment(provider: UniPaymentProviderEnum,jsapiPayment: JsApiPaymentDTO,orderInfo: string, callback: (success: boolean, requestPaymentCode?: RequestPaymentCode) => void) {
+    uni.requestPayment({
+      provider: <'alipay' | 'wxpay' | 'baidu' | 'appleiap'>provider,
+      orderInfo: orderInfo,
+      nonceStr: jsapiPayment.nonceStr,
+      package: jsapiPayment.pkg,
+      timeStamp: jsapiPayment.timeStamp,
+      paySign: jsapiPayment.paySign,
+      signType: jsapiPayment.signType,
+      success: (res) => {
+        if (res.errMsg === UniErrorMsgEnum.REQUEST_PAYMENT_OK) {
+          callback(true, RequestPaymentCode.SUCCESS)
+        } else if (res.errMsg === UniErrorMsgEnum.REQUEST_PAYMENT_CANCEL) {
+          callback(false, RequestPaymentCode.CANCEL)
+        }
+      },
+      fail: () => {
+        callback(false, RequestPaymentCode.FAILED)
+      }
+    })
   }
 
   public static doShowModal(title: string, content: string, showCancel: boolean, callback?: (code: ShowModelCodeEnum) => void) {

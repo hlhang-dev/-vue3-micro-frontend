@@ -3,14 +3,14 @@ import { Utils } from '@lasted/shared'
 export class PageManagement {
   public static redirectPage<T>(page: string, params?: object) {
     uni.redirectTo({
-      url: page + Utils.objToUrlParam(params, true)
+      url: page + Utils.objToUrlParam(params)
     })
   }
 
 
   public static navigateToPage<T>(page: string, params?: object,callback?: () => void) {
     uni.navigateTo({
-      url: page + Utils.objToUrlParam(params, true),
+      url: page + Utils.objToUrlParam(params),
       success: (result) => {
         if (callback) {
           callback()
@@ -27,7 +27,7 @@ export class PageManagement {
 
   public static switchTabPage<T>(page: string, params?: object) {
     uni.switchTab({
-      url: page + Utils.objToUrlParam(params, true)
+      url: page + Utils.objToUrlParam(params)
     })
   }
 
