@@ -7,14 +7,14 @@ import ShowModelCodeEnum from '../definition/http/ShowModelCodeEnum'
 import { Lang } from '../definition/Lang'
 
 export class UniAppManagement {
-  public static wxRequest<T>(url: string, method: string, data: object, timeout: number, callback: (requestCode: MyResponseCodeEnum, result?: ApiUnifiedVO) => void, headers: object = {}, showLoading: boolean = true,globalHeaders: object = {}) {
+  public static wxRequest<T>(url: string, method: string, data: object, timeout: number, callback: (requestCode: MyResponseCodeEnum, result?: ApiUnifiedVO) => void, headers: object = {}, showLoading: boolean = true, globalHeaders: object = {}) {
     if (showLoading) {
       LoadingManagement.getInstance().show()
     }
     uni.request({
       url: url,
       method: <'OPTIONS' | 'GET' | 'HEAD' | 'POST' | 'PUT' | 'DELETE' | 'TRACE' | 'CONNECT'>method,
-      header: UniUtils.buildHeader(headers,globalHeaders),
+      header: UniUtils.buildHeader(headers, globalHeaders),
       data: data,
       timeout: timeout,
       success: (res) => {
@@ -31,6 +31,14 @@ export class UniAppManagement {
         callback(MyResponseCodeEnum.COMPLETE)
       }
     })
+  }
+
+  public static setStorageSync(key: string, obj: any) {
+    uni.setStorageSync(key, obj)
+  }
+
+  public static getStorageSync(key: string) {
+    return uni.getStorageSync(key)
   }
 
   public static doProgramUpdate() {
@@ -85,7 +93,7 @@ export class UniAppManagement {
   public static getSystemInfo(callback: (result: UniNamespace.GetSystemInfoResult) => void) {
     uni.getSystemInfo({
           success: (result) => {
-                callback(result)
+            callback(result)
           }
         }
     )

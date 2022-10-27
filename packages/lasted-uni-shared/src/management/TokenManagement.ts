@@ -1,25 +1,26 @@
 import TokenConstant from '../definition/token/TokenConstant'
+import { UniAppManagement } from './UniAppManagement'
 
 export class TokenManagement {
 
-  static _instance: TokenManagement
+  private static _instance: TokenManagement
 
-  static getInstance () {
+  public static getInstance() {
     if (!TokenManagement._instance) {
       TokenManagement._instance = new TokenManagement()
     }
     return TokenManagement._instance
   }
 
-  saveAccountToken (token: string) {
-    uni.setStorageSync(TokenConstant.ACCOUNT_AUTH_TOKEN_LABEL, token)
+  public saveAccountToken(token: string) {
+    UniAppManagement.setStorageSync(TokenConstant.ACCOUNT_AUTH_TOKEN_LABEL, token)
   }
 
-  getAccountToken (): string {
-    return uni.getStorageSync(TokenConstant.ACCOUNT_AUTH_TOKEN_LABEL)
+  public getAccountToken(): string {
+    return UniAppManagement.getStorageSync(TokenConstant.ACCOUNT_AUTH_TOKEN_LABEL)
   }
 
-  clearStorage () {
+  public removeAccountToken() {
     uni.removeStorageSync(TokenConstant.ACCOUNT_AUTH_TOKEN_LABEL)
   }
 }

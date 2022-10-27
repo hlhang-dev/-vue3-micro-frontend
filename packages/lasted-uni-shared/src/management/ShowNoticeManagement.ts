@@ -16,4 +16,12 @@ export class ShowNoticeManagement {
       duration: duration
     })
   }
+
+  public static showErrorNotice(title: string = '', duration = NoticeDurationEnum.NORMAL) {
+    uni.showToast({
+      icon: 'error',
+      title: title,
+      duration: duration
+    })
+  }
 }

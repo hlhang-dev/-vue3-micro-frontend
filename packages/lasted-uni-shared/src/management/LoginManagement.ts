@@ -1,5 +1,6 @@
 import TokenConstant from '../definition/token/TokenConstant'
 import { UniErrorMsgEnum } from '../definition/msg/UniErrorMsgEnum'
+import { UniAppManagement } from './UniAppManagement'
 
 export class LoginManagement {
   private static _instance: LoginManagement
@@ -14,7 +15,7 @@ export class LoginManagement {
 
 
   isAccountLogin() {
-    return !!uni.getStorageSync(TokenConstant.ACCOUNT_AUTH_TOKEN_LABEL)
+    return !!UniAppManagement.getStorageSync(TokenConstant.ACCOUNT_AUTH_TOKEN_LABEL)
   }
 
   isAccountLoginBeOverdue(code: number) {
