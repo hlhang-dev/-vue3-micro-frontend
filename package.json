@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@dcloudio/types": "^3.0.14",
     "@types/node": "^18.11.3",
     "json2typescript": "1.3",
     "reflect-metadata": "^0.1.13",
